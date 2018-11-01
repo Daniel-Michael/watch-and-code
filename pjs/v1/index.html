@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>Practical JavaScript Practise</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <section>
+        
+            <header>
+                <h1>To Do List</h1>
+            </header>
+            <div>
+                    <button onclick="handlers.addTodo()">Add To Do</button>
+                    <input id="addTodoTextInput" type="text" placeholder="what is to be done?">
+            </div></br>
+
+            <div>
+                    <button onclick="handlers.editTodo()">Edit To Do</button>
+                    <input id="editTodoTextPosition" type="number" placeholder="position">
+                    <input id="editTodoTextInput" type="text" placeholder="new item">
+            </div></br>
+
+            <!-- <div>
+                <button onclick="handlers.editTodoPosition()">Change Order</button>
+                <input id="currentTodoTextPosition" type="number" placeholder="current pos">
+                <input id="newTodoTextPosition" type="number" placeholder="new pos">                
+            </div> -->
+
+            <div>                 
+              <button onclick="handlers.toggleAll()">Toggle All</button>
+            </div>
+            
+            <div>
+                    <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+                    <input id="toggleCompletedPositionInput" type="number" placeholder="position">
+            </div></br>           
+
+            <ul>   
+            </ul>
+
+            
+        
+        </section>
+        <footer>
+
+        </footer>
+        <script src="todolist.js"></script>
+    </body>
