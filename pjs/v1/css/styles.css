@@ -1,0 +1,30 @@
+body {
+  font-family: courier, arial, sans-serif;
+  position: relative;
+  margin: 200px;
+  text-align: center;
+  padding: 10px;
+  border: 10px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #5680e9;
+  background-color: #84ceeb;
+  }
+
+h1 {
+  color: #8860d0;
+}
+
+output {
+  position: relative;
+  text-align: center;
+  color: #00303F;
+  
+}
+input[type=number]{
+    width: 66px;
+}
+button {
+  font-family: courier, arial, sans-serif;
+  color: #5680e9;
+}
