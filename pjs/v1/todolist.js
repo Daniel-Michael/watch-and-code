@@ -55,13 +55,6 @@ var handlers = {
     editTodoTextInput.value='';
     view.displayTodos();
   },
-  // editTodoTextPosition: function() {
-  //   var currentTodoTextPosition = document.getElementById('currentTodoTextPosition');
-
-  //   var newTodoTextPosition = document.getElementById('newTodoTextPosition');
-
-  //   todoList.editTodo()
-  // },
   deleteTodo: function(position) { 
     todoList.deleteTodo(position);
     view.displayTodos();
