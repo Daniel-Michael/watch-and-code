@@ -24,3 +24,11 @@ forEach(students, function(student) {
 tutorialsElement.addEventListener('click', function(event) {
   console.log('The tutorials element was clicked!');
 });
+
+// A quick look at Handlebars templating
+
+var htmlTemplate = '<div>{{title}}</div>';
+var handlebarsTemplate = Handlebars.compile(htmlTemplate);
+
+handlebarsTemplate({{title: 'This is a quick look at handlebars templating.'}});
+
