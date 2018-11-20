@@ -32,3 +32,10 @@ var handlebarsTemplate = Handlebars.compile(htmlTemplate);
 
 handlebarsTemplate({{title: 'This is a quick look at handlebars templating.'}});
 
+// handling arrays in Handlebars
+
+var data = {todos: [{title: 'First'}, {title: 'Second'}, {title: 'Third'}]};
+var htmlTemplate = '<ul> {{#todos}} <li>{{title}}</li> {{/todos}} </ul>';
+var handlebarsTemplate = Handlebars.compile(htmlTemplate);
+
+handlebarsTemplate(data);
