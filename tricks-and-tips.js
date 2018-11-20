@@ -25,6 +25,11 @@ tutorialsElement.addEventListener('click', function(event) {
   console.log('The tutorials element was clicked!');
 });
 
+// ***HANDLEBARS TEMPLATING****
+
+// Call a handlebars template to the browser by including a script tag
+<script id="todo-template" type="text/x-handlebars-template">
+  
 // A quick look at Handlebars templating
 var htmlTemplate = '<div>{{title}}</div>';
 var handlebarsTemplate = Handlebars.compile(htmlTemplate);
