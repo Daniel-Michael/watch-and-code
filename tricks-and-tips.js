@@ -45,4 +45,9 @@ var handlebarsTemplate = Handlebars.compile(htmlTemplate);
 
 handlebarsTemplate(data);
 
+// if logic in Handlebars
+var htmlTemplate = '<div> {{#if show}} TRUE {{/if}}</div>';
+var handlebarsTemplate = Handlebars.compile(htmlTemplate);
+handlebarsTemplate({show: true});
+// ---> outputs "<div>TRUE</div>"
 
