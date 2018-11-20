@@ -26,16 +26,23 @@ tutorialsElement.addEventListener('click', function(event) {
 });
 
 // A quick look at Handlebars templating
-
 var htmlTemplate = '<div>{{title}}</div>';
 var handlebarsTemplate = Handlebars.compile(htmlTemplate);
 
 handlebarsTemplate({{title: 'This is a quick look at handlebars templating.'}});
 
 // handling arrays in Handlebars
-
 var data = {todos: [{title: 'First'}, {title: 'Second'}, {title: 'Third'}]};
 var htmlTemplate = '<ul> {{#todos}} <li>{{title}}</li> {{/todos}} </ul>';
 var handlebarsTemplate = Handlebars.compile(htmlTemplate);
 
 handlebarsTemplate(data);
+
+// Passing in arrays directly using `this` keyword.
+var data = [{title: 'First'}, {title: 'Second'}, {title: 'Third'}];
+var htmlTemplate = '<ul> {{#this}} <li>{{title}}</li> {{/this}} </ul>';
+var handlebarsTemplate = Handlebars.compile(htmlTemplate);
+
+handlebarsTemplate(data);
+
+
