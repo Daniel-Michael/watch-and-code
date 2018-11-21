@@ -56,3 +56,9 @@ var handlebarsTemplate = Handlebars.compile(htmlTemplate);
 handlebarsTemplate({show: true});
 // ---> outputs "<div>TRUE</div>"
 
+// JSON.stringify & JSON.parse
+var objectsArray = [{name: 'Baxter'}, {name: 'Bella'}]
+// --> returns "[{name: 'Baxter'}, {name: 'Bella'}]"
+var stringVersionsOfArray = JSON.stringify(objectsArray)
+// --> returns object version
+JSON.parse(stringVersionOfArray)
