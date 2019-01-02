@@ -10,23 +10,12 @@
 // forEach([1, 2, 3], function(number) {
 //    console.log(number);
 // });
-function forEach() {
-  for (var i = 0; i < array.length; i++) {
-    callback(array[i]);
-  }
-}
+function forEach() {}
 tests({
   'It should run the callback function array.length times.': function() {
-    var counter = 0;
-    forEach([1, 2, 3], function() {
-      counter++;
-    });
-    eq(COUNTER, 3);
+    fail();
   },
   'It should pass in the ith element as the first argument to the callback': function() {
-    forEach([i], function(number) {
-      eq(number, 1);
-    });
-  }
+   fail();
 });
 </script>
