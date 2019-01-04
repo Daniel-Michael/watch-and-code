@@ -10,22 +10,25 @@
 // forEach([1, 2, 3], function(number) {
 //    console.log(number);
 // });
-function forEach() {
+function forEach(array, callback) {
+  var forEachCallback = callback;
+
   for (var i = 0; i < array.length; i++) {
-    callback(array[i]);
+    forEachCallback(array[i], i, array);
+    }
   }
-}
+
 tests({
-  'It should run the callback function array.length times.': function() {
-    var counter = 0;
+  'it should run the callback function array.length times': function() {
+var numberOfTimesCallbackFunctionHasRun = 0;
     forEach([1, 2, 3], function() {
-      counter++;
+      numberOfTimesCallbackFunctionHasRun++;
     });
-    eq(COUNTER, 3);
+    eq(numberOfTimesCallbackFunctionHasRun, 3);
   },
-  'It should pass in the ith element as the first argument to the callback': function() {
-    forEach([i], function(number) {
-      eq(number, 1);
+  'it should pass in the ith element as the first argument to the callback': function() {
+    forEach([1], function(number) {
+     	eq(number, 1);
     });
   }
 });
