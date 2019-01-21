@@ -40,58 +40,52 @@
 var TinyTest = {
 
     run: function(tests) {
-        var failures = 0;//this: TinyTest. Case 2
-        for (var testName in tests) {//this: TinyTest. Case 2
-            var testAction = tests[testName];//this: TinyTest. Case 2
+        var failures = 0;
+        for (var testName in tests) {
+            var testAction = tests[testName];
             try {
-                testAction.apply(this);//this: TinyTest. Case 2 //Why need .apply()
-                //`this` inside testAction will be TinyTest. Case 4. If don't apply,`this` will be window.
-                console.log('Test:', testName, 'OK');//this: TinyTest. Case 2 
+                testAction.apply(this);
+                console.log('Test:', testName, 'OK');
             } catch (e) {
-                failures++;//this: TinyTest. Case 2 
-                console.error('Test:', testName, 'FAILED', e);//this: TinyTest. Case 2 
-                console.error(e.stack);//this: TinyTest. Case 2 
+                failures++;
+                console.error('Test:', testName, 'FAILED', e);
+                console.error(e.stack);
             }
         }
-
-        setTimeout(function() { // Give document a chance to complete //this before {: TinyTest. Case 2
-            if (window.document && document.body) {//this: window. Case 1 within case 5
-                document.body.style.backgroundColor = (failures == 0 ? '#99ff99' : '#ff9999');//this: window. Case 1 within case 5
+        setTimeout(function() { // Give document a chance to complete
+            if (window.document && document.body) {
+                document.body.style.backgroundColor = (failures == 0 ? '#99ff99' : '#ff9999');
             }
         }, 0);
     },
-    //setTimeout priority
-    //1.JavaScript
-    //2.Update the DOM
-    //3.Extra tasks (e.g. callbacks passed into setTimeout)
 
     fail: function(msg) {
-        throw new Error('fail(): ' + msg);//this: TinyTest. Case 2 
+        throw new Error('fail(): ' + msg);
     },
 
     assert: function(value, msg) {
-        if (!value) {//this: TinyTest. Case 2 
-            throw new Error('assert(): ' + msg);//this: TinyTest. Case 2 
+        if (!value) {
+            throw new Error('assert(): ' + msg);
         }
     },
 
     assertEquals: function(expected, actual) {
-        if (expected != actual) {//this: TinyTest. Case 2 
-            throw new Error('assertEquals() "' + expected + '" != "' + actual + '"');//this: TinyTest. Case 2 
+        if (expected != actual) {
+            throw new Error('assertEquals() "' + expected + '" != "' + actual + '"');
         }
     },
 
     assertStrictEquals: function(expected, actual) {
-        if (expected !== actual) {//this: TinyTest. Case 2 
-            throw new Error('assertStrictEquals() "' + expected + '" !== "' + actual + '"');//this: TinyTest. Case 2 
+        if (expected !== actual) {
+            throw new Error('assertStrictEquals() "' + expected + '" !== "' + actual + '"');
         }
     },
 
 };
 
-var fail               = TinyTest.fail.bind(TinyTest),//why need .bind(TinyTest) //this: window. Case 1
-    assert             = TinyTest.assert.bind(TinyTest),//this: window. Case 1
-    assertEquals       = TinyTest.assertEquals.bind(TinyTest),//this: window. Case 1
-    eq                 = TinyTest.assertEquals.bind(TinyTest), // alias for assertEquals //this: window. Case 1
-    assertStrictEquals = TinyTest.assertStrictEquals.bind(TinyTest),//this: window. Case 1
-    tests              = TinyTest.run.bind(TinyTest);//this: window. Case 1
+var fail               = TinyTest.fail.bind(TinyTest),
+    assert             = TinyTest.assert.bind(TinyTest),
+    assertEquals       = TinyTest.assertEquals.bind(TinyTest),
+    eq                 = TinyTest.assertEquals.bind(TinyTest), // alias for assertEquals
+    assertStrictEquals = TinyTest.assertStrictEquals.bind(TinyTest),
+    tests              = TinyTest.run.bind(TinyTest);
