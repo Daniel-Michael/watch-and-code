@@ -2,42 +2,42 @@
 <script src="../tinytest.js"></script>
 <script>
 
-// Example 1:
-// find([1, 2, 3], function(callback) {
-//   console.log('hi');
-// })
+// Prototype function
 
-// Example 2:
-// find([1, 2, 3], function(callback, index) {
-//   console.log('hi');
-// })
+// myArray = [-2, 0, 5, 9, 36, 7.2, -222];
 
-// Example 3:
-// find(function(callback, index, array) {
-//   console.log('hi');
-// })
+// var found = myArray.find(function(firstMatch) {
+//  return firstMatch > 0;
+// });
 
-// Example 2:
-// find(function(callback, index) {
-//   console.log('hi');
-// }thisArg)
+// console.log(found);
 
-function find() {};
+// Notes
+
+/* Parameters:
+element [the current element in the array]
+index | optional [The index of the current element in the array]
+array | optional
+thisArg | optional
+*/ 
+
+function find(element) {
+};
 
 tests({
   'It should return the first item in the array': function() {
-    fail();
-    find([1, 2, 3], function(callback) {
-      console.log('hi');
+    var counter = 0;
+    find([1], function(element) {
+      counter++;
     }); 
-    eq();
+    eq(element, 1);
   },
-  '': function() {
-    fail();
-  },
-  '': function() {
-    fail();
-  },
+  // '': function() {
+  //   fail();
+  // },
+  // '': function() {
+  //   fail();
+  // },
 });
 </script>
 
