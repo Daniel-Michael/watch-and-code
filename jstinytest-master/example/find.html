@@ -1,0 +1,43 @@
+
+<script src="../tinytest.js"></script>
+<script>
+
+// Example 1:
+// find([1, 2, 3], function(callback) {
+//   console.log('hi');
+// })
+
+// Example 2:
+// find([1, 2, 3], function(callback, index) {
+//   console.log('hi');
+// })
+
+// Example 3:
+// find(function(callback, index, array) {
+//   console.log('hi');
+// })
+
+// Example 2:
+// find(function(callback, index) {
+//   console.log('hi');
+// }thisArg)
+
+function find() {};
+
+tests({
+  'It should return the first item in the array': function() {
+    fail();
+    find([1, 2, 3], function(callback) {
+      console.log('hi');
+    }); 
+    eq();
+  },
+  '': function() {
+    fail();
+  },
+  '': function() {
+    fail();
+  },
+});
+</script>
+
