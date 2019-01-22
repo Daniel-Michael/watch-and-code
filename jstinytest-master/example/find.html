@@ -1,9 +1,10 @@
 
 <script src="../tinytest.js"></script>
 <script>
+// Function signature:
+// find(array, callback[, optionalThis])
 
 // Prototype function
-
 // myArray = [-2, 0, 5, 9, 36, 7.2, -222];
 
 // var found = myArray.find(function(firstMatch) {
@@ -21,16 +22,15 @@ array | optional
 thisArg | optional
 */ 
 
-function find(element) {
-};
+// function find(element) {
+// };
 
 tests({
-  'It should return the first item in the array': function() {
-    var counter = 0;
+  'It should pass in the ith element as the first argument to the callback': function() {
+    // fail();
     find([1], function(element) {
-      counter++;
-    }); 
-    eq(element, 1);
+      eq(element, 2);
+  })
   },
   // '': function() {
   //   fail();
